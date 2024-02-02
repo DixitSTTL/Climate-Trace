@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/fragmentDashboard">
+
+    <fragment
+        android:id="@+id/fragmentDashboard"
+        android:name="com.app.coroutindemo.views.fragment.FragmentDashboard"
+        android:label="FragmentDashboard" >
+        <action
+            android:id="@+id/action_fragmentDashboard_to_fragmentContinenets"
+            app:destination="@id/fragmentContinenets" />
+        <action
+            android:id="@+id/action_fragmentDashboard_to_fragmentSectors"
+            app:destination="@id/fragmentSectors" />
+        <action
+            android:id="@+id/action_fragmentDashboard_to_fragmentCountries"
+            app:destination="@id/fragmentCountries" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentContinenets"
+        android:name="com.app.coroutindemo.views.fragment.FragmentContinenets"
+        android:label="fragment_continenets"
+        tools:layout="@layout/fragment_continenets" />
+    <fragment
+        android:id="@+id/fragmentSectors"
+        android:name="com.app.coroutindemo.views.fragment.FragmentSectors"
+        android:label="FragmentSectors" />
+    <fragment
+        android:id="@+id/fragmentCountries"
+        android:name="com.app.coroutindemo.views.fragment.FragmentCountries"
+        android:label="fragment_countries"
+        tools:layout="@layout/fragment_countries" />
+</navigation>
