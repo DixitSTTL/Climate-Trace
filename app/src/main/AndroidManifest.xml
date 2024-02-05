@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CoroutinDemo"
+        android:theme="@style/Theme.CoroutineDemo"
         tools:targetApi="31">
         <activity
             android:name=".views.activity.ActivityMain"

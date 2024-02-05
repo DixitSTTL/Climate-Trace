@@ -7,13 +7,13 @@
 
         <variable
             name="mViewModel"
-            type="com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewmodelSectors" />
+            type="com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewmodelGases" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".views.fragment.FragmentSectors">
+        tools:context=".views.fragment.FragmentGases">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefreshLayout"
@@ -21,7 +21,7 @@
             android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recSectors"
+                android:id="@+id/recSubSectors"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

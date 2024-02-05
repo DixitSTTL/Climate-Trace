@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CoroutinDemo"
+rootProject.name = "CoroutineDemo"
 include(":app")
  

@@ -1,0 +1,7 @@
+package com.app.coroutinedemo.businesslogic.interfaces
+
+import android.view.View
+
+interface GeneralItemClickListeners {
+    fun onItemClick(view: View?, position: Int, item: Any?)
+}

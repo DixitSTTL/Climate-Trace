@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.CoroutinDemo" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.CoroutineDemo" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.CoroutinDemo" parent="Base.Theme.CoroutinDemo" />
+    <style name="Theme.CoroutineDemo" parent="Base.Theme.CoroutineDemo" />
 </resources>

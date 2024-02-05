@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.app.coroutindemo"
+    namespace = "com.app.coroutinedemo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.app.coroutindemo"
+        applicationId = "com.app.coroutinedemo"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -70,4 +70,7 @@ dependencies {
     //liveData
     implementation (libs.androidx.lifecycle.livedata.ktx)
     implementation (libs.androidx.lifecycle.viewmodel.ktx)
+
+    //refresh
+    implementation (libs.androidx.swiperefreshlayout)
 }

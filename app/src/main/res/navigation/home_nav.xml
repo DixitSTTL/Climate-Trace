@@ -7,30 +7,57 @@
 
     <fragment
         android:id="@+id/fragmentDashboard"
-        android:name="com.app.coroutindemo.views.fragment.FragmentDashboard"
-        android:label="FragmentDashboard" >
+        android:name="com.app.coroutinedemo.views.fragment.FragmentDashboard"
+        android:label="FragmentDashboard">
         <action
-            android:id="@+id/action_fragmentDashboard_to_fragmentContinenets"
-            app:destination="@id/fragmentContinenets" />
+            android:id="@+id/action_fragmentDashboard_to_fragmentContinents"
+            app:destination="@id/fragmentContinents" />
         <action
             android:id="@+id/action_fragmentDashboard_to_fragmentSectors"
             app:destination="@id/fragmentSectors" />
         <action
             android:id="@+id/action_fragmentDashboard_to_fragmentCountries"
             app:destination="@id/fragmentCountries" />
+        <action
+            android:id="@+id/action_fragmentDashboard_to_fragmentSubSectors"
+            app:destination="@id/fragmentSubSectors" />
+        <action
+            android:id="@+id/action_fragmentDashboard_to_fragmentGases"
+            app:destination="@id/fragmentGases" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentContinenets"
-        android:name="com.app.coroutindemo.views.fragment.FragmentContinenets"
-        android:label="fragment_continenets"
-        tools:layout="@layout/fragment_continenets" />
+        android:id="@+id/fragmentContinents"
+        android:name="com.app.coroutinedemo.views.fragment.FragmentContinents"
+        android:label="fragment_continents"
+        tools:layout="@layout/fragment_continents" />
     <fragment
         android:id="@+id/fragmentSectors"
-        android:name="com.app.coroutindemo.views.fragment.FragmentSectors"
+        android:name="com.app.coroutinedemo.views.fragment.FragmentSectors"
         android:label="FragmentSectors" />
     <fragment
         android:id="@+id/fragmentCountries"
-        android:name="com.app.coroutindemo.views.fragment.FragmentCountries"
+        android:name="com.app.coroutinedemo.views.fragment.FragmentCountries"
         android:label="fragment_countries"
-        tools:layout="@layout/fragment_countries" />
+        tools:layout="@layout/fragment_countries">
+        <action
+            android:id="@+id/action_fragmentCountries_to_fragmentEmission"
+            app:destination="@id/fragmentEmission" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSubSectors"
+        android:name="com.app.coroutinedemo.views.fragment.FragmentSubSectors"
+        android:label="FragmentSubSectors" />
+    <fragment
+        android:id="@+id/fragmentGases"
+        android:name="com.app.coroutinedemo.views.fragment.FragmentGases"
+        android:label="FragmentGases" />
+    <fragment
+        android:id="@+id/fragmentEmission"
+        android:name="com.app.coroutinedemo.views.fragment.FragmentEmission"
+        android:label="FragmentEmission">
+
+        <argument
+            android:name="countryItem"
+            app:argType="com.app.coroutinedemo.businesslogic.pojo.countries.PojoCountriesItem" />
+    </fragment>
 </navigation>
