@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/fragmentDashboard"
         android:name="com.app.coroutinedemo.views.fragment.FragmentDashboard"
-        android:label="FragmentDashboard">
+        android:label="Climate Trace">
         <action
             android:id="@+id/action_fragmentDashboard_to_fragmentContinents"
             app:destination="@id/fragmentContinents" />
@@ -28,16 +28,16 @@
     <fragment
         android:id="@+id/fragmentContinents"
         android:name="com.app.coroutinedemo.views.fragment.FragmentContinents"
-        android:label="fragment_continents"
+        android:label="Continents"
         tools:layout="@layout/fragment_continents" />
     <fragment
         android:id="@+id/fragmentSectors"
         android:name="com.app.coroutinedemo.views.fragment.FragmentSectors"
-        android:label="FragmentSectors" />
+        android:label="Sectors" />
     <fragment
         android:id="@+id/fragmentCountries"
         android:name="com.app.coroutinedemo.views.fragment.FragmentCountries"
-        android:label="fragment_countries"
+        android:label="Countries"
         tools:layout="@layout/fragment_countries">
         <action
             android:id="@+id/action_fragmentCountries_to_fragmentEmission"
@@ -46,15 +46,15 @@
     <fragment
         android:id="@+id/fragmentSubSectors"
         android:name="com.app.coroutinedemo.views.fragment.FragmentSubSectors"
-        android:label="FragmentSubSectors" />
+        android:label="SubSectors" />
     <fragment
         android:id="@+id/fragmentGases"
         android:name="com.app.coroutinedemo.views.fragment.FragmentGases"
-        android:label="FragmentGases" />
+        android:label="Gases" />
     <fragment
         android:id="@+id/fragmentEmission"
         android:name="com.app.coroutinedemo.views.fragment.FragmentEmission"
-        android:label="FragmentEmission">
+        android:label="Emission">
 
         <argument
             android:name="countryItem"

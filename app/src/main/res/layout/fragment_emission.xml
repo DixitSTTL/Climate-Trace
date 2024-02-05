@@ -7,24 +7,53 @@
 
         <variable
             name="mViewModel"
-            type="com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewmodelEmission" />
+            type="com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewModelEmission" />
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".views.fragment.FragmentGases">
+        tools:context=".views.fragment.FragmentEmission">
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipeRefreshLayout"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recSubSectors"
+            <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    </FrameLayout>
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="9dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recSubSectors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:progressListener="@{mViewModel.isDataLoaded}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

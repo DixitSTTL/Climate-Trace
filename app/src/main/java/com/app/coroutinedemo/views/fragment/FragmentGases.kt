@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.coroutinedemo.R
 import com.app.coroutinedemo.businesslogic.interfaces.GeneralItemClickListeners
-import com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewmodelGases
+import com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewModelGases
 import com.app.coroutinedemo.databinding.FragmentGasesBinding
 import com.app.coroutinedemo.views.adapter.AdapterCommon
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,11 +19,16 @@ import dagger.hilt.android.AndroidEntryPoint
 class FragmentGases : FragmentBase() {
 
     private lateinit var mBinding: FragmentGasesBinding
-    private lateinit var mViewModel: ViewmodelGases
+    private lateinit var mViewModel: ViewModelGases
     private lateinit var mAdapter: AdapterCommon
     private var generalItemClickListeners = object : GeneralItemClickListeners {
         override fun onItemClick(view: View?, position: Int, item: Any?) {
+            if (view != null) {
+                if (view.id == R.id.imageButton) {
 
+                    mViewModel.deleteItem(item as String)
+                }
+            }
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +41,7 @@ class FragmentGases : FragmentBase() {
         savedInstanceState: Bundle?
     ): View? {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_gases, container, false)
-        mViewModel = ViewModelProvider(mActivityMain!!)[ViewmodelGases::class.java]
+        mViewModel = ViewModelProvider(mActivityMain!!)[ViewModelGases::class.java]
         init()
         observe()
 

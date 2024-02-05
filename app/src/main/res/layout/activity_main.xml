@@ -1,22 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".views.activity.ActivityMain">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="mViewModel"
+            type="com.app.coroutinedemo.businesslogic.viewmodel.activity.ViewmodelMain" />
 
-    <fragment
-        android:id="@+id/frame"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/home_nav" />
+        android:layout_height="match_parent">
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawer_layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:openDrawer="start">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".views.activity.ActivityMain">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green"
+                    app:titleTextColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <fragment
+                    android:id="@+id/frame"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    app:navGraph="@navigation/home_nav" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigation_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                tools:visibility="visible">
+
+            </com.google.android.material.navigation.NavigationView>
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </FrameLayout>
+</layout>

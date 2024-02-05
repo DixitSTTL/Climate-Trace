@@ -9,7 +9,6 @@
             name="generalClick"
             type="com.app.coroutinedemo.businesslogic.interfaces.GeneralClickListeners" />
 
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,20 +20,23 @@
             android:id="@+id/btnContinents"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            android:backgroundTint="@color/green"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="CONTINENTS"
             app:layout_constraintBottom_toTopOf="@+id/btnCountries"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.16000003"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <Button
             android:id="@+id/btnCountries"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/green"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="CONTRIES"
             app:layout_constraintBottom_toTopOf="@+id/btnSectors"
@@ -47,7 +49,8 @@
             android:id="@+id/btnSectors"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/green"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="SECTORS"
             app:layout_constraintBottom_toTopOf="@+id/btnSubSectors"
@@ -60,7 +63,8 @@
             android:id="@+id/btnSubSectors"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/green"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="SUB SECTORS"
             app:layout_constraintBottom_toTopOf="@+id/btnGases"
@@ -73,7 +77,8 @@
             android:id="@+id/btnGases"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/green"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="GASES"
             app:layout_constraintBottom_toBottomOf="parent"

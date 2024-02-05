@@ -7,10 +7,10 @@
 
         <variable
             name="mViewModel"
-            type="com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewmodelGases" />
+            type="com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewModelGases" />
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".views.fragment.FragmentGases">
@@ -18,6 +18,9 @@
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefreshLayout"
             android:layout_width="match_parent"
+            app:refreshListener="@{mViewModel.onRefreshListener}"
+            app:setSwipeRefreshing="@{mViewModel.observableSwipeRefreshing}"
+            app:setEnabledSwipeRefresh="@{mViewModel.observableEnabledSwipeRefresh}"
             android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -25,6 +28,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:progressListener="@{mViewModel.isDataLoaded}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

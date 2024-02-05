@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.coroutinedemo.R
 import com.app.coroutinedemo.businesslogic.interfaces.GeneralItemClickListeners
 import com.app.coroutinedemo.businesslogic.pojo.countries.PojoCountriesItem
-import com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewmodelCountries
+import com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewModelCountries
 import com.app.coroutinedemo.databinding.FragmentCountriesBinding
 import com.app.coroutinedemo.views.adapter.AdapterCountries
 
@@ -19,7 +19,7 @@ class FragmentCountries : FragmentBase() {
 
 
     private lateinit var mBinding: FragmentCountriesBinding
-    private lateinit var mViewModel: ViewmodelCountries
+    private lateinit var mViewModel: ViewModelCountries
     private lateinit var mAdapter: AdapterCountries
 
     private var generalItemClickListeners = object : GeneralItemClickListeners {
@@ -42,7 +42,7 @@ class FragmentCountries : FragmentBase() {
         savedInstanceState: Bundle?
     ): View? {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_countries, container, false)
-        mViewModel = ViewModelProvider(mActivityMain!!)[ViewmodelCountries::class.java]
+        mViewModel = ViewModelProvider(mActivityMain!!)[ViewModelCountries::class.java]
         init()
         observe()
         // Inflate the layout for this fragment

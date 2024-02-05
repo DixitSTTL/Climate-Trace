@@ -10,17 +10,22 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.coroutinedemo.R
 import com.app.coroutinedemo.businesslogic.interfaces.GeneralItemClickListeners
-import com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewmodelContinents
+import com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewModelContinents
 import com.app.coroutinedemo.databinding.FragmentContinentsBinding
 import com.app.coroutinedemo.views.adapter.AdapterCommon
 
 class FragmentContinents : FragmentBase() {
     private lateinit var mBinding: FragmentContinentsBinding
-    private lateinit var mViewModel: ViewmodelContinents
+    private lateinit var mViewModel: ViewModelContinents
     private lateinit var mAdapter: AdapterCommon
     private var generalItemClickListeners = object : GeneralItemClickListeners {
         override fun onItemClick(view: View?, position: Int, item: Any?) {
+            if (view != null) {
+                if (view.id == R.id.imageButton) {
 
+                    mViewModel.deleteItem(item as String)
+                }
+            }
         }
     }
 
@@ -35,7 +40,7 @@ class FragmentContinents : FragmentBase() {
     ): View? {
         // Inflate the layout for this fragment
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_continents, container, false)
-        mViewModel = ViewModelProvider(mActivityMain!!)[ViewmodelContinents::class.java]
+        mViewModel = ViewModelProvider(mActivityMain!!)[ViewModelContinents::class.java]
         init()
         observe()
         // Inflate the layout for this fragment

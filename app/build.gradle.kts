@@ -73,4 +73,7 @@ dependencies {
 
     //refresh
     implementation (libs.androidx.swiperefreshlayout)
+
+    //MPAndroidChart
+    implementation (libs.mpandroidchart)
 }

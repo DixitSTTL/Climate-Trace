@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.app.coroutinedemo.R
 import com.app.coroutinedemo.businesslogic.interfaces.GeneralClickListeners
-import com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewmodelDashboard
+import com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewModelDashboard
 import com.app.coroutinedemo.databinding.FragmentDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,7 +16,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class FragmentDashboard : FragmentBase() {
 
     private lateinit var mBinding: FragmentDashboardBinding
-    private lateinit var mViewModel: ViewmodelDashboard
+    private lateinit var mViewModel: ViewModelDashboard
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,7 +67,7 @@ class FragmentDashboard : FragmentBase() {
 
         mBinding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_dashboard, container, false)
-        mViewModel = ViewModelProvider(this)[ViewmodelDashboard::class.java]
+        mViewModel = ViewModelProvider(this)[ViewModelDashboard::class.java]
         // Inflate the layout for this fragment
         return mBinding.root
     }

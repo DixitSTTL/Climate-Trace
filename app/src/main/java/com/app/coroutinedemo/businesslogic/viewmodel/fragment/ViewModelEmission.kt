@@ -12,22 +12,22 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ViewmodelEmission @Inject constructor() : ViewModelBase() {
+class ViewModelEmission @Inject constructor() : ViewModelBase() {
 
     private var _dataList: MutableLiveData<List<CountryData>> = MutableLiveData()
     val dataList: LiveData<List<CountryData>> = _dataList
     val dataCountry = ObservableField<PojoCountriesItem>()
 
     fun fetchApi() {
+        isDataLoaded.set(false)
         _dataList.value = emptyList()
         viewModelScope.launch {
             var data = apiHelper.fetchEmissionOfCountry(dataCountry.get()!!.alpha3).body()
 
-
             data.let {
 
                 _dataList.value = it?.get(dataCountry.get()!!.alpha3)
-
+                isDataLoaded.set(true)
 
             }
         }

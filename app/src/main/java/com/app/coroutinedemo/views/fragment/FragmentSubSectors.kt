@@ -10,8 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.coroutinedemo.R
 import com.app.coroutinedemo.businesslogic.interfaces.GeneralItemClickListeners
-import com.app.coroutinedemo.businesslogic.pojo.countries.PojoCountriesItem
-import com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewmodelSubSectors
+import com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewModelSubSectors
 import com.app.coroutinedemo.databinding.FragmentSubSectorsBinding
 import com.app.coroutinedemo.views.adapter.AdapterCommon
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,11 +19,16 @@ import dagger.hilt.android.AndroidEntryPoint
 class FragmentSubSectors : FragmentBase() {
 
     private lateinit var mBinding: FragmentSubSectorsBinding
-    private lateinit var mViewModel: ViewmodelSubSectors
+    private lateinit var mViewModel: ViewModelSubSectors
     private lateinit var mAdapter: AdapterCommon
     private var generalItemClickListeners = object : GeneralItemClickListeners {
         override fun onItemClick(view: View?, position: Int, item: Any?) {
+            if (view != null) {
+                if (view.id == R.id.imageButton) {
 
+                    mViewModel.deleteItem(item as String)
+                }
+            }
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,7 +42,7 @@ class FragmentSubSectors : FragmentBase() {
     ): View? {
         mBinding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_sub_sectors, container, false)
-        mViewModel = ViewModelProvider(mActivityMain!!)[ViewmodelSubSectors::class.java]
+        mViewModel = ViewModelProvider(mActivityMain!!)[ViewModelSubSectors::class.java]
         init()
         observe()
 

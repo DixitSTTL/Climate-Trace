@@ -1,5 +1,6 @@
 package com.app.coroutinedemo.businesslogic.viewmodel
 
+import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.app.coroutinedemo.MyApplication
@@ -16,6 +17,8 @@ open class ViewModelBase @Inject constructor() : ViewModel() {
     @Inject
     protected lateinit var mApplication: MyApplication
 
-    val isDataLoaded = MutableLiveData(false)
+    val isDataLoaded = ObservableBoolean(false)
+    val observableSwipeRefreshing = ObservableBoolean(false)
+    val observableEnabledSwipeRefresh = ObservableBoolean(true)
 
 }
