@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -77,16 +78,21 @@ class FragmentEmission : FragmentBase() {
     }
 
     private fun setPieChart() {
+        val tLRegular = ResourcesCompat.getFont(mApplication, R.font.lato_regular)
+
         pieChart!!.setUsePercentValues(true)
         pieChart!!.description.isEnabled = false
         pieChart!!.setExtraOffsets(5F, 10F, 5F, 80F)
         pieChart!!.dragDecelerationFrictionCoef = 0.95f
 
-//        pieChart!!.setCenterTextTypeface(tfLight)
+        pieChart!!.setCenterTextTypeface(tLRegular)
+        pieChart!!.setCenterTextSize(20f)
+        pieChart!!.setCenterTextColor(resources.getColor(R.color.mWbRevers))
+        pieChart!!.setHoleColor(resources.getColor(R.color.mWb))
+
         pieChart!!.centerText = mViewModel.dataCountry.get()?.name ?: ""
 
         pieChart!!.isDrawHoleEnabled = true
-        pieChart!!.setHoleColor(Color.WHITE)
 
         pieChart!!.setTransparentCircleColor(Color.WHITE)
         pieChart!!.setTransparentCircleAlpha(110)
@@ -111,6 +117,8 @@ class FragmentEmission : FragmentBase() {
         l.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
         l.orientation = Legend.LegendOrientation.HORIZONTAL
         l.form = Legend.LegendForm.CIRCLE
+        l.typeface = tLRegular
+        l.textColor = resources.getColor(R.color.mWbRevers)
         l.isWordWrapEnabled = true
         l.setDrawInside(true)
         l.xEntrySpace = 7f
@@ -120,12 +128,13 @@ class FragmentEmission : FragmentBase() {
         // entry label styling
         pieChart!!.setDrawEntryLabels(false)
         pieChart!!.setEntryLabelColor(Color.BLACK)
-//        pieChart!!.setEntryLabelTypeface(tfRegular)
+        pieChart!!.setEntryLabelTypeface(tLRegular)
         pieChart!!.setEntryLabelTextSize(12f)
         setPieChartData()
     }
 
     fun setPieChartData() {
+        val tLRegular = ResourcesCompat.getFont(mApplication, R.font.lato_regular)
 
         val entries: ArrayList<PieEntry> = ArrayList()
 
@@ -136,9 +145,10 @@ class FragmentEmission : FragmentBase() {
 
 
         val dataSet = PieDataSet(entries, "")
-        dataSet.setDrawIcons(false)
+        dataSet.setDrawIcons(true)
         dataSet.sliceSpace = 3f
         dataSet.iconsOffset = MPPointF(0F, 40F)
+        dataSet.selectionShift = 5f
         dataSet.selectionShift = 5f
 
         // add colors
@@ -148,9 +158,9 @@ class FragmentEmission : FragmentBase() {
         //dataSet.setSelectionShift(0f);
         val data = PieData(dataSet)
         data.setValueFormatter(PercentFormatter())
-        data.setValueTextSize(11f)
-        data.setValueTextColor(Color.WHITE)
-//        data.setValueTypeface(tfLight)
+        data.setValueTextSize(12f)
+        data.setValueTextColor(resources.getColor(R.color.mWb))
+        data.setValueTypeface(tLRegular)
         pieChart!!.setData(data)
 
         // undo all highlights

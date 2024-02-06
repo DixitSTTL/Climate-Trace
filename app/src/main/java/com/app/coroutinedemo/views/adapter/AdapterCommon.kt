@@ -1,13 +1,11 @@
 package com.app.coroutinedemo.views.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.app.coroutinedemo.businesslogic.interfaces.GeneralItemClickListeners
 import com.app.coroutinedemo.databinding.ItemLayoutCommonBinding
-
 
 class AdapterCommon(var generalItemClickListeners: GeneralItemClickListeners): RecyclerView.Adapter<AdapterCommon.MyViewHolder>() {
 
@@ -38,12 +36,11 @@ class AdapterCommon(var generalItemClickListeners: GeneralItemClickListeners): R
     }
 
     fun setList(dataList: ArrayList<String>) {
-        updateEmployeeListItems(dataList)
-        Log.d("hello","cdksnv")
+        updateListItems(dataList)
 
     }
 
-    fun updateEmployeeListItems(updatedList: List<String>) {
+    fun updateListItems(updatedList: List<String>) {
         val diffCallback = EmployeeDiffCallback(this.dataList, updatedList)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
         this.dataList.clear()

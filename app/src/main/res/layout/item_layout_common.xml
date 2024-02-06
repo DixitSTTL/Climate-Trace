@@ -32,7 +32,8 @@
             android:text="@{str}"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/lato_regular"
+
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

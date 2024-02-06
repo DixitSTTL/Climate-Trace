@@ -1,5 +1,6 @@
 package com.app.coroutinedemo.businesslogic.viewmodel.fragment
 
+import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -14,7 +15,7 @@ class ViewModelCountries @Inject constructor() : ViewModelBase() {
 
     private var _dataList: MutableLiveData<PojoCountries> = MutableLiveData()
     val dataList: LiveData<PojoCountries> = _dataList
-
+    var searchText = ObservableField<String>()
 
     fun fetchApi() {
         if (!isDataLoaded.get()) {

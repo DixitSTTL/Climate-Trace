@@ -1,10 +1,13 @@
 package com.app.coroutinedemo.views.fragment
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.Observable
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,7 +29,8 @@ class FragmentCountries : FragmentBase() {
         override fun onItemClick(view: View?, position: Int, item: Any?) {
             val model = item as PojoCountriesItem?
 
-            val action = FragmentCountriesDirections.actionFragmentCountriesToFragmentEmission(model!!)
+            val action =
+                FragmentCountriesDirections.actionFragmentCountriesToFragmentEmission(model!!)
 
             mActivityMain?.navigateToEmission(action)
         }
@@ -61,11 +65,19 @@ class FragmentCountries : FragmentBase() {
         val mLinearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         mBinding.recCountries.adapter = mAdapter
         mBinding.recCountries.layoutManager = mLinearLayoutManager
+
     }
 
     private fun observe() {
         mViewModel.dataList.observe(viewLifecycleOwner, Observer {
             mAdapter.setList(it)
+        })
+        mViewModel.searchText.addOnPropertyChangedCallback(object :
+            Observable.OnPropertyChangedCallback() {
+            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
+                mAdapter.filter.filter(mViewModel.searchText.get())
+
+            }
         })
 
     }

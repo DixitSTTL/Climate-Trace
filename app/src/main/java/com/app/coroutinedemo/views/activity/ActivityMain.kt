@@ -73,7 +73,7 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener 
     }
 
     private fun setToolbar() {
-        setSupportActionBar(mBinding!!.toolbar)
+        setSupportActionBar(mBinding.toolbar)
 
         if (supportActionBar != null) {
             supportActionBar!!.setDisplayShowTitleEnabled(false)
@@ -106,6 +106,7 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener 
         setDrawerEnabled(isRoot)
         mBinding.toolbar.navigationIcon?.setTint(getColor(R.color.white));
         mDrawerToggle!!.syncState()
+        (if (isRoot) R.drawable.ic_menu else null)?.let { mBinding.toolbar.setNavigationIcon(it) }
 
     }
 

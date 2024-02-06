@@ -18,9 +18,10 @@
 
         <Button
             android:id="@+id/btnContinents"
+            style="@style/DashBoardButtonsText"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/main_color"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="CONTINENTS"
             app:layout_constraintBottom_toTopOf="@+id/btnCountries"
@@ -33,10 +34,11 @@
 
         <Button
             android:id="@+id/btnCountries"
+            style="@style/DashBoardButtonsText"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/main_color"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="CONTRIES"
             app:layout_constraintBottom_toTopOf="@+id/btnSectors"
@@ -47,10 +49,11 @@
 
         <Button
             android:id="@+id/btnSectors"
+            style="@style/DashBoardButtonsText"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/main_color"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="SECTORS"
             app:layout_constraintBottom_toTopOf="@+id/btnSubSectors"
@@ -61,10 +64,11 @@
 
         <Button
             android:id="@+id/btnSubSectors"
+            style="@style/DashBoardButtonsText"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/main_color"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="SUB SECTORS"
             app:layout_constraintBottom_toTopOf="@+id/btnGases"
@@ -75,10 +79,11 @@
 
         <Button
             android:id="@+id/btnGases"
+            style="@style/DashBoardButtonsText"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/main_color"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="GASES"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -4,6 +4,7 @@ import android.content.Context
 import com.app.coroutinedemo.MyApplication
 import com.app.coroutinedemo.businesslogic.network.ApiCallFactory
 import com.app.coroutinedemo.businesslogic.network.ApiHelper
+import com.app.coroutinedemo.utils.StaticData
 import com.app.paper.businesslogic.coroutine.AppDispatchersProvider
 import com.app.paper.businesslogic.coroutine.DispatchersProvider
 import dagger.Module
@@ -33,7 +34,7 @@ class NetworkModule {
     @Provides
     @Singleton
     fun providesRetrofitInterface(): ApiHelper {
-        return ApiCallFactory.create("https://api.climatetrace.org/v4/")
+        return ApiCallFactory.create(StaticData.getBaseURL())
     }
 
     @Provides

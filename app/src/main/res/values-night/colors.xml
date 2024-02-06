@@ -3,10 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-
-    <color name="main_color">#009688</color>
-    <color name="mWb">#FFFFFFFF</color>
-    <color name="mWbRevers">#FF000000</color>
-
+    <color name="main_color">#004D40</color>
+    <color name="mWb">#FF000000</color>
+    <color name="mWbRevers">#FFFFFFFF</color>
 
 </resources>

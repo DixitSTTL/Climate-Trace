@@ -38,6 +38,14 @@ android {
         jvmTarget = "1.8"
     }
 
+    ndkVersion="23.1.7779620"
+
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+        }
+    }
+
     buildFeatures{
         dataBinding = true
     }
