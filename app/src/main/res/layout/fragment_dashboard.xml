@@ -19,78 +19,81 @@
         <Button
             android:id="@+id/btnContinents"
             style="@style/DashBoardButtonsText"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
             android:backgroundTint="@color/main_color"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="CONTINENTS"
-            app:layout_constraintBottom_toTopOf="@+id/btnCountries"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnSectors"
+            app:layout_constraintEnd_toStartOf="@+id/btnCountries"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.16000003"
+            app:layout_constraintVertical_bias="0.29000002"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <Button
             android:id="@+id/btnCountries"
             style="@style/DashBoardButtonsText"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
             android:backgroundTint="@color/main_color"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="CONTRIES"
-            app:layout_constraintBottom_toTopOf="@+id/btnSectors"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnContinents"
+            app:layout_constraintTop_toTopOf="@+id/btnContinents" />
+
+        <Button
+            android:id="@+id/btnSectors"
+            style="@style/DashBoardButtonsText"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/main_color"
+            android:onClick="@{(v)->generalClick.onClick(v)}"
+            android:text="SECTORS"
+            app:layout_constraintBottom_toTopOf="@+id/btnGases"
+            app:layout_constraintEnd_toStartOf="@+id/btnSubSectors"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnContinents" />
 
         <Button
-            android:id="@+id/btnSectors"
-            style="@style/DashBoardButtonsText"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="@color/main_color"
-            android:onClick="@{(v)->generalClick.onClick(v)}"
-            android:text="SECTORS"
-            app:layout_constraintBottom_toTopOf="@+id/btnSubSectors"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnCountries" />
-
-        <Button
             android:id="@+id/btnSubSectors"
             style="@style/DashBoardButtonsText"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="8dp"
             android:backgroundTint="@color/main_color"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="SUB SECTORS"
-            app:layout_constraintBottom_toTopOf="@+id/btnGases"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnSectors" />
+            app:layout_constraintStart_toEndOf="@+id/btnSectors"
+            app:layout_constraintTop_toTopOf="@+id/btnSectors" />
 
         <Button
             android:id="@+id/btnGases"
             style="@style/DashBoardButtonsText"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:backgroundTint="@color/main_color"
             android:onClick="@{(v)->generalClick.onClick(v)}"
             android:text="GASES"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnSectors"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnSubSectors" />
+            app:layout_constraintTop_toBottomOf="@+id/btnSectors" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

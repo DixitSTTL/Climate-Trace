@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="touchListener"
+            type="androidx.recyclerview.widget.ItemTouchHelper.SimpleCallback" />
+
+        <variable
             name="mViewModel"
             type="com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewModelContinents" />
     </data>
@@ -13,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".views.fragment.FragmentContinenets">
+        tools:context=".views.fragment.FragmentContinents">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefreshLayout"
@@ -25,6 +29,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recContinent"
+                app:setSwipeToDelete="@{touchListener}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

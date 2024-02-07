@@ -33,13 +33,12 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
         mBinding = DataBindingUtil.setContentView(this@ActivityMain, R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+       /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-        }
+        }*/
         mViewModel = ViewModelProvider(this@ActivityMain)[ViewmodelMain::class.java]
         mBinding.mViewModel = mViewModel
 
@@ -73,6 +72,7 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener 
     }
 
     private fun setToolbar() {
+        mBinding.appBarLayout.setPadding(0,getStatusBarHeight(),0,0)
         setSupportActionBar(mBinding.toolbar)
 
         if (supportActionBar != null) {
@@ -95,7 +95,7 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener 
 
 
     private fun setToolBarTitle(label: CharSequence?) {
-        mBinding.toolbar.title = label
+        mViewModel.observableToolbarTitle.set(label.toString())
     }
 
     private fun setToolBarHome(isRoot: Boolean) {

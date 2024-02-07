@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="mViewModel"
             type="com.app.coroutinedemo.businesslogic.viewmodel.activity.ViewmodelMain" />
@@ -12,28 +13,44 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".views.activity.ActivityMain">
+
         <androidx.drawerlayout.widget.DrawerLayout
             android:id="@+id/drawer_layout_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:openDrawer="start">
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context=".views.activity.ActivityMain">
 
-                <com.google.android.material.appbar.MaterialToolbar
-                    android:id="@+id/toolbar"
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/appBarLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/main_color"
-                    app:titleTextColor="@color/white"
-                    app:titleTextAppearance="@style/MaterialToolbarTitleText"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.appbar.MaterialToolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/main_color"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:titleTextColor="@color/white"
+                        app:title="@{mViewModel.observableToolbarTitle}"
+                        app:titleTextAppearance="@style/MaterialToolbarTitleText" />
+
+
+                </com.google.android.material.appbar.AppBarLayout>
+
 
                 <fragment
                     android:id="@+id/frame"
@@ -43,16 +60,35 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                    app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
                     app:navGraph="@navigation/home_nav" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <com.google.android.material.navigation.NavigationView
                 android:id="@+id/navigation_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
                 tools:visibility="visible">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                        </LinearLayout>
+                    </ScrollView>
+                </FrameLayout>
 
             </com.google.android.material.navigation.NavigationView>
         </androidx.drawerlayout.widget.DrawerLayout>

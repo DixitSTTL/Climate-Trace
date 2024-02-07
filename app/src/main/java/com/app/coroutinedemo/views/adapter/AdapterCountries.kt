@@ -45,9 +45,10 @@ class AdapterCountries(var generalItemClickListeners: GeneralItemClickListeners)
     }
 
     fun setList(__dataList: ArrayList<PojoCountriesItem>) {
-        fullList = __dataList
+        fullList.clear()
+        dataList.clear()
+        fullList.addAll(__dataList)
         updateListItems(fullList)
-        dataList = __dataList
     }
 
     fun updateListItems(updatedList: ArrayList<PojoCountriesItem>) {
@@ -96,7 +97,7 @@ class AdapterCountries(var generalItemClickListeners: GeneralItemClickListeners)
     private val customFilter = object : Filter() {
         override fun performFiltering(constraint: CharSequence?): FilterResults {
             var middelList = ArrayList<PojoCountriesItem>()
-             if (constraint?.equals("") == true) {
+             if (constraint.isNullOrEmpty()) {
                  middelList.clear()
                  middelList.addAll(fullList)
             } else {
@@ -114,14 +115,6 @@ class AdapterCountries(var generalItemClickListeners: GeneralItemClickListeners)
         }
 
         override fun publishResults(constraint: CharSequence?, filterResults: FilterResults?) {
-            Log.d("bdbfdb", " " + (filterResults?.values as ArrayList<PojoCountriesItem>).size)
-
-//            dataList = if (filterResults?.values == null)
-//                ArrayList()
-//            else
-//                filterResults?.values as ArrayList<PojoCountriesItem>
-//            notifyDataSetChanged()
-//
             updateListItems((filterResults?.values as ArrayList<PojoCountriesItem>))
         }
 

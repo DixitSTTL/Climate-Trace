@@ -29,9 +29,9 @@ class ViewModelSectors @Inject constructor() : ViewModelBase() {
         if (!isDataLoaded.get()) {
 
             viewModelScope.launch {
-                var data = apiHelper.fetchSectors().body()
+                var data = apiHelper.fetchSectors()?.body()
 
-                data.let {
+                data?.let {
                     _dataList.value?.clear()
                     _dataList.value = it
                 }
@@ -45,6 +45,16 @@ class ViewModelSectors @Inject constructor() : ViewModelBase() {
         viewModelScope.launch {
             _dataList.value?.remove(s)
             _dataList.postValue(_dataList.value)
+        }
+
+    }
+    fun addItem(poition: Int, s: String?) {
+        viewModelScope.launch {
+            s?.let {
+                _dataList.value?.add(poition, it)
+                _dataList.postValue(_dataList.value)
+            }
+
         }
 
     }

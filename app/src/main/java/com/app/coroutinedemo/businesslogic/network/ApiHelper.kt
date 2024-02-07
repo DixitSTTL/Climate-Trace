@@ -10,24 +10,24 @@ import retrofit2.http.Query
 interface ApiHelper {
 
     @GET(NetworkController.API_CONTINENTS)
-    suspend fun fetchContinents(): Response<ArrayList<String>>
+    suspend fun fetchContinents(): Response<ArrayList<String>>?
 
     @GET(NetworkController.API_COUNTRIES)
-    suspend fun fetchCountries(): Response<PojoCountries>
+    suspend fun fetchCountries(): Response<PojoCountries>?
 
     @GET(NetworkController.API_SECTORS)
-    suspend fun fetchSectors(): Response<ArrayList<String>>
+    suspend fun fetchSectors(): Response<ArrayList<String>>?
 
     @GET(NetworkController.API_SUBSECTORS)
-    suspend fun fetchSubSectors(): Response<ArrayList<String>>
+    suspend fun fetchSubSectors(): Response<ArrayList<String>>?
 
     @GET(NetworkController.API_GASES)
-    suspend fun fetchGases(): Response<ArrayList<String>>
+    suspend fun fetchGases(): Response<ArrayList<String>>?
 
     @GET(NetworkController.API_EMISSION)
     suspend fun fetchEmissionOfCountry(
         @Query(value = "countries")
         countries: String
-    ): Response<HashMap<String, List<CountryData>>>
+    ): Response<HashMap<String, List<CountryData>>>?
 
 }

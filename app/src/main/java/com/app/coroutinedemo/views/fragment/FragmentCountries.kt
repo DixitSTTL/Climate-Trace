@@ -71,6 +71,7 @@ class FragmentCountries : FragmentBase() {
     private fun observe() {
         mViewModel.dataList.observe(viewLifecycleOwner, Observer {
             mAdapter.setList(it)
+
         })
         mViewModel.searchText.addOnPropertyChangedCallback(object :
             Observable.OnPropertyChangedCallback() {

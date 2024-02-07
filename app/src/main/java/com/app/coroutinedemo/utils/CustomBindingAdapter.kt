@@ -4,21 +4,12 @@ import android.util.Log
 import android.widget.ProgressBar
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
 class CustomBindingAdapter {
     companion object {
-
-        @JvmStatic
-        @BindingAdapter("bindAdapterSector")
-        fun bindAdapterSector(recyclerView: RecyclerView, dataList: List<String>?) {
-            Log.d("dataList-", "  " + dataList)
-
-            dataList?.forEach {
-                Log.d("dataList", "  " + it)
-            }
-        }
 
         @JvmStatic
         @BindingAdapter("progressListener")
@@ -51,6 +42,15 @@ class CustomBindingAdapter {
         fun setEnabledSwipeRefresh(swipeRefresh: SwipeRefreshLayout?, isEnabled: Boolean) {
             if (swipeRefresh != null) {
                 swipeRefresh.isEnabled = isEnabled
+            }
+        }
+
+        @JvmStatic
+        @BindingAdapter("setSwipeToDelete")
+        fun setSwipeToDelete(recyclerView: RecyclerView?,touchListener :ItemTouchHelper.SimpleCallback) {
+            Log.d("bnjgfb","gfn")
+            if (recyclerView != null) {
+                ItemTouchHelper( touchListener).attachToRecyclerView(recyclerView)
             }
         }
     }

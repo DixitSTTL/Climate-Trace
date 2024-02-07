@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="touchListener"
+            type="androidx.recyclerview.widget.ItemTouchHelper.SimpleCallback" />
 
         <variable
             name="mViewModel"
@@ -25,6 +28,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recSubSectors"
+                app:setSwipeToDelete="@{touchListener}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
