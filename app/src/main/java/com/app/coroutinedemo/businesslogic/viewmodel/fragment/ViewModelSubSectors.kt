@@ -37,6 +37,7 @@ class ViewModelSubSectors @Inject constructor() : ViewModelBase() {
             }
         }
     }
+
     fun deleteItem(s: String) {
         viewModelScope.launch {
             _dataList.value?.remove(s)

@@ -72,7 +72,8 @@ class FragmentContinents : FragmentBase() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                val deletedCourse: String? = mViewModel.dataList.value?.get(viewHolder.adapterPosition)
+                val deletedCourse: String? =
+                    mViewModel.dataList.value?.get(viewHolder.adapterPosition)
 
                 val position = viewHolder.adapterPosition
 
@@ -88,6 +89,7 @@ class FragmentContinents : FragmentBase() {
             }
 
         }
+
     private fun init() {
         mAdapter = AdapterCommon(generalItemClickListeners)
         val mLinearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)

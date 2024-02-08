@@ -45,4 +45,15 @@ object Constants {
         Color.parseColor("#C9FF33"),
         Color.parseColor("#33FF6F")
     )
+
+    val PREF_NAME = "MyPref"
+
+    object SettingsConstantCodes {
+        const val APP_LANGUAGE = "app_language"
+        const val DEFAULT_APP_LANGUAGE = "en"
+        const val IS_DARK_MODE_ENABLED = "is_dark_mode_enabled"
+        const val ENGLISH_CODE = "en"
+        const val HINDI_CODE = "hi"
+        var IS_CHANGE_LANGUAGE = false
+    }
 }

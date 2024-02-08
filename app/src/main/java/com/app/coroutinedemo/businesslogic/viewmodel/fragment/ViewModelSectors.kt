@@ -48,6 +48,7 @@ class ViewModelSectors @Inject constructor() : ViewModelBase() {
         }
 
     }
+
     fun addItem(poition: Int, s: String?) {
         viewModelScope.launch {
             s?.let {

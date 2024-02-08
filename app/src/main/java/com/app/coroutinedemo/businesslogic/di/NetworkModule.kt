@@ -7,6 +7,7 @@ import com.app.coroutinedemo.businesslogic.network.ApiHelper
 import com.app.coroutinedemo.utils.StaticData
 import com.app.paper.businesslogic.coroutine.AppDispatchersProvider
 import com.app.paper.businesslogic.coroutine.DispatchersProvider
+import com.ctuil.intranet.businesslogic.preferences.UtilsSharedPreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,5 +43,9 @@ class NetworkModule {
         return AppDispatchersProvider()
     }
 
-
+    @Provides
+    @Singleton
+    fun providesPreferences(context: Context?): UtilsSharedPreferences {
+        return UtilsSharedPreferences(context!!)
+    }
 }

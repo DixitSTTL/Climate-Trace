@@ -52,7 +52,7 @@ class AdapterCountries(var generalItemClickListeners: GeneralItemClickListeners)
     }
 
     fun updateListItems(updatedList: ArrayList<PojoCountriesItem>) {
-        Log.d("listSizesss"," ${dataList.size}++++${updatedList.size}")
+        Log.d("listSizesss", " ${dataList.size}++++${updatedList.size}")
         val diffCallback = CountryDiffCallback(dataList, updatedList)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
         dataList.clear()
@@ -97,9 +97,9 @@ class AdapterCountries(var generalItemClickListeners: GeneralItemClickListeners)
     private val customFilter = object : Filter() {
         override fun performFiltering(constraint: CharSequence?): FilterResults {
             var middelList = ArrayList<PojoCountriesItem>()
-             if (constraint.isNullOrEmpty()) {
-                 middelList.clear()
-                 middelList.addAll(fullList)
+            if (constraint.isNullOrEmpty()) {
+                middelList.clear()
+                middelList.addAll(fullList)
             } else {
                 val query = constraint.toString().toLowerCase().trim()
 

@@ -1,12 +1,13 @@
 package com.app.coroutinedemo.views.activity
 
-import android.app.Activity
-import android.util.TypedValue
 import androidx.appcompat.app.AppCompatActivity
 import com.app.coroutinedemo.MyApplication
 import com.app.coroutinedemo.businesslogic.network.ApiHelper
+import com.ctuil.intranet.businesslogic.preferences.UtilsSharedPreferences
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 open class ActivityBase : AppCompatActivity() {
 
     @Inject
@@ -14,6 +15,9 @@ open class ActivityBase : AppCompatActivity() {
 
     @Inject
     protected lateinit var mApiHelper: ApiHelper
+
+    @Inject
+    protected lateinit var mPreference: UtilsSharedPreferences
 
     open fun getStatusBarHeight(): Int {
         return try {

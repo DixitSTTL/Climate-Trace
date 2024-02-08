@@ -17,7 +17,7 @@ class CustomBindingAdapter {
             progressBar: ProgressBar?,
             flag: Boolean?
         ) {
-            progressBar?.isVisible= !flag!!
+            progressBar?.isVisible = !flag!!
         }
 
         @JvmStatic
@@ -47,10 +47,13 @@ class CustomBindingAdapter {
 
         @JvmStatic
         @BindingAdapter("setSwipeToDelete")
-        fun setSwipeToDelete(recyclerView: RecyclerView?,touchListener :ItemTouchHelper.SimpleCallback) {
-            Log.d("bnjgfb","gfn")
+        fun setSwipeToDelete(
+            recyclerView: RecyclerView?,
+            touchListener: ItemTouchHelper.SimpleCallback
+        ) {
+            Log.d("bnjgfb", "gfn")
             if (recyclerView != null) {
-                ItemTouchHelper( touchListener).attachToRecyclerView(recyclerView)
+                ItemTouchHelper(touchListener).attachToRecyclerView(recyclerView)
             }
         }
     }

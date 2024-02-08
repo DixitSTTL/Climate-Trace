@@ -7,7 +7,7 @@
 
         <variable
             name="mViewModel"
-            type="com.app.coroutinedemo.businesslogic.viewmodel.activity.ViewmodelMain" />
+            type="com.app.coroutinedemo.businesslogic.viewmodel.activity.ViewModelMain" />
 
     </data>
 
@@ -44,9 +44,9 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:titleTextColor="@color/white"
                         app:title="@{mViewModel.observableToolbarTitle}"
-                        app:titleTextAppearance="@style/MaterialToolbarTitleText" />
+                        app:titleTextAppearance="@style/MaterialToolbarTitleText"
+                        app:titleTextColor="@color/white" />
 
 
                 </com.google.android.material.appbar.AppBarLayout>
@@ -70,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
+                app:menu="@menu/navigation_menu"
                 tools:visibility="visible">
 
                 <FrameLayout

@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.coroutinedemo.businesslogic.interfaces.GeneralItemClickListeners
 import com.app.coroutinedemo.databinding.ItemLayoutCommonBinding
 
-class AdapterCommon(var generalItemClickListeners: GeneralItemClickListeners): RecyclerView.Adapter<AdapterCommon.MyViewHolder>() {
+class AdapterCommon(var generalItemClickListeners: GeneralItemClickListeners) :
+    RecyclerView.Adapter<AdapterCommon.MyViewHolder>() {
 
     private var dataList: ArrayList<String> = ArrayList()
 
@@ -49,7 +50,8 @@ class AdapterCommon(var generalItemClickListeners: GeneralItemClickListeners): R
     }
 }
 
-class EmployeeDiffCallback(var dataList: ArrayList<String>,var updatedList: List<String>) : DiffUtil.Callback() {
+class EmployeeDiffCallback(var dataList: ArrayList<String>, var updatedList: List<String>) :
+    DiffUtil.Callback() {
     override fun getOldListSize(): Int {
         return dataList.size
     }
@@ -60,13 +62,13 @@ class EmployeeDiffCallback(var dataList: ArrayList<String>,var updatedList: List
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         val oldEmployee = dataList[oldItemPosition];
-        val  newEmployee = updatedList[newItemPosition];
+        val newEmployee = updatedList[newItemPosition];
         return oldEmployee == newEmployee;
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         val oldEmployee = dataList[oldItemPosition];
-        val  newEmployee = updatedList[newItemPosition];
+        val newEmployee = updatedList[newItemPosition];
         return oldEmployee == newEmployee;
     }
 

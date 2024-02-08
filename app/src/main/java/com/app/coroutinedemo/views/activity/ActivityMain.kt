@@ -1,12 +1,13 @@
 package com.app.coroutinedemo.views.activity
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProvider
@@ -15,17 +16,20 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.app.coroutinedemo.R
-import com.app.coroutinedemo.businesslogic.viewmodel.activity.ViewmodelMain
+import com.app.coroutinedemo.businesslogic.viewmodel.activity.ViewModelMain
 import com.app.coroutinedemo.databinding.ActivityMainBinding
+import com.google.android.material.navigation.NavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
 
+
 @AndroidEntryPoint
-class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener {
+class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener,
+    NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var navController: NavController
     private lateinit var mBinding: ActivityMainBinding
-    private lateinit var mViewModel: ViewmodelMain
+    private lateinit var mViewModel: ViewModelMain
     private var mDrawerToggle: ActionBarDrawerToggle? = null
 
     var press_time: Long = 0
@@ -34,18 +38,20 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         mBinding = DataBindingUtil.setContentView(this@ActivityMain, R.layout.activity_main)
-       /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }*/
-        mViewModel = ViewModelProvider(this@ActivityMain)[ViewmodelMain::class.java]
+        /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+             insets
+         }*/
+        mViewModel = ViewModelProvider(this@ActivityMain)[ViewModelMain::class.java]
         mBinding.mViewModel = mViewModel
-
         setToolbar()
         setDrawer()
         setNavigator()
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        return super.onCreateOptionsMenu(menu)
     }
 
     private fun setDrawer() {
@@ -60,6 +66,7 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener 
                 super.onDrawerOpened(drawerView)
             }
         }
+        mBinding.navigationMain.setNavigationItemSelectedListener(this);
         mDrawerToggle!!.toolbarNavigationClickListener = View.OnClickListener { v: View? ->
             onBackPressed()
         }
@@ -72,7 +79,7 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener 
     }
 
     private fun setToolbar() {
-        mBinding.appBarLayout.setPadding(0,getStatusBarHeight(),0,0)
+        mBinding.appBarLayout.setPadding(0, getStatusBarHeight(), 0, 0)
         setSupportActionBar(mBinding.toolbar)
 
         if (supportActionBar != null) {
@@ -114,6 +121,18 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener 
         val lockMode =
             if (enabled) DrawerLayout.LOCK_MODE_UNLOCKED else DrawerLayout.LOCK_MODE_LOCKED_CLOSED
         mBinding!!.drawerLayoutMain.setDrawerLockMode(lockMode)
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_settings -> {
+                navigateToSettings()
+                return true
+            }
+
+        }
+        mBinding.drawerLayoutMain.closeDrawer(GravityCompat.START)
+        return true
     }
 
     override fun onBackPressed() {
@@ -158,5 +177,11 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener 
 
         navController.navigate(action)
     }
+
+    fun navigateToSettings() {
+
+        navController.navigate(R.id.action_fragmentDashboard_to_fragmentSettings)
+    }
+
 
 }

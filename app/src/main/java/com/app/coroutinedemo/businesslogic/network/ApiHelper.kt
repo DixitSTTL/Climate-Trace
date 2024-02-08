@@ -2,7 +2,6 @@ package com.app.coroutinedemo.businesslogic.network
 
 import com.app.coroutinedemo.businesslogic.pojo.countries.PojoCountries
 import com.app.coroutinedemo.businesslogic.pojo.emission.CountryData
-import com.app.coroutinedemo.businesslogic.pojo.emission.PojoEmission
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

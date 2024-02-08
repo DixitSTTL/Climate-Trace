@@ -21,6 +21,7 @@ class ViewModelContinents @Inject constructor() : ViewModelBase() {
         isDataLoaded.set(false)
         fetchApi()
     }
+
     fun fetchApi() {
         if (!isDataLoaded.get()) {
 
@@ -36,6 +37,7 @@ class ViewModelContinents @Inject constructor() : ViewModelBase() {
             }
         }
     }
+
     fun deleteItem(s: String) {
         viewModelScope.launch {
             _dataList.value?.remove(s)

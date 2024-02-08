@@ -8,7 +8,7 @@ data class PojoCountriesItem(
     val alpha3: String,
     val continent: String,
     val name: String
-): Parcelable {
+) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString()!!,
         parcel.readString()!!,

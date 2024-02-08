@@ -47,7 +47,8 @@ class FragmentGases : FragmentBase() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                val deletedCourse: String? = mViewModel.dataList.value?.get(viewHolder.adapterPosition)
+                val deletedCourse: String? =
+                    mViewModel.dataList.value?.get(viewHolder.adapterPosition)
 
                 val position = viewHolder.adapterPosition
 
@@ -63,6 +64,7 @@ class FragmentGases : FragmentBase() {
             }
 
         }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -90,7 +92,7 @@ class FragmentGases : FragmentBase() {
     }
 
     private fun init() {
-        mAdapter= AdapterCommon(generalItemClickListeners)
+        mAdapter = AdapterCommon(generalItemClickListeners)
         val mLinearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         mBinding.recSubSectors.adapter = mAdapter
         mBinding.recSubSectors.layoutManager = mLinearLayoutManager

@@ -76,7 +76,8 @@ class FragmentSubSectors : FragmentBase() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                val deletedCourse: String? = mViewModel.dataList.value?.get(viewHolder.adapterPosition)
+                val deletedCourse: String? =
+                    mViewModel.dataList.value?.get(viewHolder.adapterPosition)
 
                 val position = viewHolder.adapterPosition
 

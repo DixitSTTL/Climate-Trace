@@ -1,6 +1,5 @@
 package com.app.coroutinedemo.businesslogic.viewmodel.fragment
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
@@ -13,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ViewModelGases @Inject constructor() : ViewModelBase() {
-    var myLive= liveData {
+    var myLive = liveData {
         var data = apiHelper.fetchGases()?.body()
         data?.let {
             observableSwipeRefreshing.set(false)
@@ -24,9 +23,8 @@ class ViewModelGases @Inject constructor() : ViewModelBase() {
 
     private var _dataList: MutableLiveData<ArrayList<String>> = MutableLiveData()
     val dataList: LiveData<ArrayList<String>>
-    get() = _dataList
+        get() = _dataList
     var onRefreshListener = SwipeRefreshLayout.OnRefreshListener { refreshGases() }
-
 
 
     private fun refreshGases() {
@@ -52,6 +50,7 @@ class ViewModelGases @Inject constructor() : ViewModelBase() {
             }
         }
     }
+
     fun deleteItem(s: String) {
         viewModelScope.launch {
             _dataList.value?.remove(s)

@@ -5,7 +5,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class ViewModelDashboard @Inject constructor() : ViewModelBase() {
+class ViewModelSettings @Inject constructor() : ViewModelBase() {
 
 
 }

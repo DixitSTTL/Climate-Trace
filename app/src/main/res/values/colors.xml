@@ -8,5 +8,8 @@
     <color name="mWb">#FFFFFFFF</color>
     <color name="mWbRevers">#FF000000</color>
 
+    <color name="checked_track_color">#6C9793</color>
+    <color name="unchecked_track_color">#9A9A9A</color>
+
 
 </resources>

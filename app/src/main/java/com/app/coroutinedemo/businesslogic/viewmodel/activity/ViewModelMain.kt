@@ -6,7 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class ViewmodelMain @Inject constructor() : ViewModelBase() {
+class ViewModelMain @Inject constructor() : ViewModelBase() {
 
     var observableToolbarTitle = ObservableField<String>()
 
