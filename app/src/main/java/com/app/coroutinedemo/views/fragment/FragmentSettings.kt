@@ -23,8 +23,7 @@ class FragmentSettings : FragmentBase() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_settings, container, false)
         mViewModel = ViewModelProvider(mActivityMain!!)[ViewModelSettings::class.java]
@@ -36,8 +35,7 @@ class FragmentSettings : FragmentBase() {
     private fun init() {
         mViewModel.isDarkModeEnable.set(
             mPreferences.getBooleanDefault(
-                IS_DARK_MODE_ENABLED,
-                mApplication.isSystemInDarkMode(requireContext())
+                IS_DARK_MODE_ENABLED, mApplication.isSystemInDarkMode(requireContext())
             )
         )
 
@@ -58,7 +56,6 @@ class FragmentSettings : FragmentBase() {
                 mApplication.init()
 
             }
-
         })
     }
 
