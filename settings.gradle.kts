@@ -20,6 +20,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CoroutineDemo"
+rootProject.name = "Climate Trace"
 include(":app")
  

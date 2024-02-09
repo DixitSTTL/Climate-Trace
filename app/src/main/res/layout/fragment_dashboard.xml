@@ -7,7 +7,7 @@
 
         <variable
             name="generalClick"
-            type="com.app.coroutinedemo.businesslogic.interfaces.GeneralClickListeners" />
+            type="com.app.climate_trace.businesslogic.interfaces.GeneralClickListeners" />
 
     </data>
 

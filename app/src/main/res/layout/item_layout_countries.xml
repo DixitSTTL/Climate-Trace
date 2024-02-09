@@ -7,7 +7,7 @@
 
         <variable
             name="pojo"
-            type="com.app.coroutinedemo.businesslogic.pojo.countries.PojoCountriesItem" />
+            type="com.app.climate_trace.businesslogic.pojo.countries.PojoCountriesItem" />
 
         <variable
             name="currentPosition"
@@ -15,7 +15,7 @@
 
         <variable
             name="generalItemClickListener"
-            type="com.app.coroutinedemo.businesslogic.interfaces.GeneralItemClickListeners" />
+            type="com.app.climate_trace.businesslogic.interfaces.GeneralItemClickListeners" />
 
     </data>
 

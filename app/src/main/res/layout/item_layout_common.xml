@@ -13,7 +13,7 @@
             type="Integer" />
         <variable
             name="generalItemClickListener"
-            type="com.app.coroutinedemo.businesslogic.interfaces.GeneralItemClickListeners" />
+            type="com.app.climate_trace.businesslogic.interfaces.GeneralItemClickListeners" />
 
     </data>
 

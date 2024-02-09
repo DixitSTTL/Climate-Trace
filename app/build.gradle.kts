@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.app.coroutinedemo"
+    namespace = "com.app.climate_trace"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.app.coroutinedemo"
+        applicationId = "com.app.climate_trace"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -7,7 +7,7 @@
 
         <variable
             name="pojo"
-            type="com.app.coroutinedemo.businesslogic.pojo.emission.CountryData" />
+            type="com.app.climate_trace.businesslogic.pojo.emission.CountryData" />
 
     </data>
 

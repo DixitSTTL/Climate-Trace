@@ -11,7 +11,7 @@
 
         <variable
             name="mViewModel"
-            type="com.app.coroutinedemo.businesslogic.viewmodel.fragment.ViewModelSectors" />
+            type="com.app.climate_trace.businesslogic.viewmodel.fragment.ViewModelSectors" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

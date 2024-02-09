@@ -7,7 +7,7 @@
 
         <variable
             name="mViewModel"
-            type="com.app.coroutinedemo.businesslogic.viewmodel.activity.ViewModelMain" />
+            type="com.app.climate_trace.businesslogic.viewmodel.activity.ViewModelMain" />
 
     </data>
 
