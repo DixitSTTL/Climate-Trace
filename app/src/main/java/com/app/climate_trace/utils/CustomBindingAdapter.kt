@@ -1,6 +1,5 @@
 package com.app.climate_trace.utils
 
-import android.util.Log
 import android.widget.ProgressBar
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
@@ -51,7 +50,6 @@ class CustomBindingAdapter {
             recyclerView: RecyclerView?,
             touchListener: ItemTouchHelper.SimpleCallback
         ) {
-            Log.d("bnjgfb", "gfn")
             if (recyclerView != null) {
                 ItemTouchHelper(touchListener).attachToRecyclerView(recyclerView)
             }

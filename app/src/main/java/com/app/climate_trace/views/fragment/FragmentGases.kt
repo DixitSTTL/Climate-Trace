@@ -99,9 +99,9 @@ class FragmentGases : FragmentBase() {
     }
 
     private fun observe() {
-        mViewModel.dataList.observe(viewLifecycleOwner, Observer {
+        mViewModel.dataList.observe(viewLifecycleOwner) {
             mAdapter.setList(it)
-        })
+        }
 
     }
 
