@@ -21,7 +21,7 @@ class ViewModelCountries @Inject constructor() : ViewModelBase() {
         if (!isDataLoaded.get()) {
 
             viewModelScope.launch {
-                var data = apiHelper.fetchCountries()?.body()
+                var data = _apiHelper.fetchCountries()?.body()
 
                 data?.let {
                     _dataList.value?.clear()

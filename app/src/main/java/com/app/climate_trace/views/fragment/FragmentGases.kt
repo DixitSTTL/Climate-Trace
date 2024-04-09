@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.app.climate_trace.R
 import com.app.climate_trace.businesslogic.interfaces.GeneralItemClickListeners
 import com.app.climate_trace.businesslogic.viewmodel.fragment.ViewModelGases
@@ -93,7 +94,7 @@ class FragmentGases : FragmentBase() {
 
     private fun init() {
         mAdapter = AdapterCommon(generalItemClickListeners)
-        val mLinearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        val mLinearLayoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         mBinding.recSubSectors.adapter = mAdapter
         mBinding.recSubSectors.layoutManager = mLinearLayoutManager
     }

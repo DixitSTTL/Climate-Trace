@@ -26,7 +26,7 @@ class ViewModelSubSectors @Inject constructor() : ViewModelBase() {
         if (!isDataLoaded.get()) {
 
             viewModelScope.launch {
-                var data = apiHelper.fetchSubSectors()?.body()
+                var data = _apiHelper.fetchSubSectors()?.body()
 
                 data?.let {
                     _dataList.value?.clear()

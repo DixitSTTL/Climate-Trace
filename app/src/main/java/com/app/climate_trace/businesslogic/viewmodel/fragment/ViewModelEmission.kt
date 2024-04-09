@@ -22,7 +22,7 @@ class ViewModelEmission @Inject constructor() : ViewModelBase() {
         isDataLoaded.set(false)
         _dataList.value = emptyList()
         viewModelScope.launch {
-            var data = apiHelper.fetchEmissionOfCountry(dataCountry.get()!!.alpha3)?.body()
+            var data = _apiHelper.fetchEmissionOfCountry(dataCountry.get()!!.alpha3)?.body()
 
             data?.let {
 

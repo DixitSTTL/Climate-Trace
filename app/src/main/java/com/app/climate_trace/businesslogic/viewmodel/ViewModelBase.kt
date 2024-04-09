@@ -12,7 +12,7 @@ import javax.inject.Inject
 open class ViewModelBase @Inject constructor() : ViewModel() {
 
     @Inject
-    protected lateinit var apiHelper: ApiHelper
+    protected lateinit var _apiHelper: ApiHelper
 
     @Inject
     protected lateinit var mApplication: MyApplication

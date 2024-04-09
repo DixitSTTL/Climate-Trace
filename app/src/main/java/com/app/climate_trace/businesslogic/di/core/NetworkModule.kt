@@ -1,4 +1,4 @@
-package com.app.climate_trace.businesslogic.di
+package com.app.climate_trace.businesslogic.di.core
 
 import android.content.Context
 import com.app.climate_trace.MyApplication

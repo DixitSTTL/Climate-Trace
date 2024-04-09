@@ -29,7 +29,7 @@ class ViewModelSectors @Inject constructor() : ViewModelBase() {
         if (!isDataLoaded.get()) {
 
             viewModelScope.launch {
-                var data = apiHelper.fetchSectors()?.body()
+                var data = _apiHelper.fetchSectors()?.body()
 
                 data?.let {
                     _dataList.value?.clear()

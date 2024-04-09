@@ -2,24 +2,17 @@ package com.app.climate_trace.businesslogic.viewmodel.fragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.app.climate_trace.businesslogic.network.ApiHelper
 import com.app.climate_trace.businesslogic.viewmodel.ViewModelBase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ViewModelGases @Inject constructor() : ViewModelBase() {
-    var myLive = liveData {
-        var data = apiHelper.fetchGases()?.body()
-        data?.let {
-            observableSwipeRefreshing.set(false)
-            isDataLoaded.set(true)
-            emit(it)
-        }
-    }
+class ViewModelGases @Inject constructor(var apiHelper: ApiHelper) : ViewModelBase() {
+
 
     private var _dataList: MutableLiveData<ArrayList<String>> = MutableLiveData()
     val dataList: LiveData<ArrayList<String>>

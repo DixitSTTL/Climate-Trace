@@ -26,7 +26,7 @@ class ViewModelContinents @Inject constructor() : ViewModelBase() {
         if (!isDataLoaded.get()) {
 
             viewModelScope.launch {
-                var data = apiHelper.fetchContinents()?.body()
+                var data = _apiHelper.fetchContinents()?.body()
 
                 data?.let {
                     _dataList.value?.clear()
