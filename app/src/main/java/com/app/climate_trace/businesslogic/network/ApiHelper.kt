@@ -26,7 +26,7 @@ interface ApiHelper {
     @GET(NetworkController.API_EMISSION)
     suspend fun fetchEmissionOfCountry(
         @Query(value = "countries")
-        countries: String
+        countries: String?
     ): Response<HashMap<String, List<CountryData>>>?
 
 }

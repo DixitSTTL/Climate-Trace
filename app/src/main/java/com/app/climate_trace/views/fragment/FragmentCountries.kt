@@ -26,11 +26,12 @@ class FragmentCountries : FragmentBase() {
     private var generalItemClickListeners = object : GeneralItemClickListeners {
         override fun onItemClick(view: View?, position: Int, item: Any?) {
             val model = item as PojoCountriesItem?
+            model?.let {
+                val action =
+                    FragmentCountriesDirections.actionFragmentCountriesToFragmentEmission(it.alpha3,it.name)
+                mActivityMain?.navigateToEmission(action)
+            }
 
-            val action =
-                FragmentCountriesDirections.actionFragmentCountriesToFragmentEmission(model!!)
-
-            mActivityMain?.navigateToEmission(action)
         }
     }
 

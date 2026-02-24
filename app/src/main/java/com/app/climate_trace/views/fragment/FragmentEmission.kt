@@ -65,7 +65,8 @@ class FragmentEmission : FragmentBase() {
         val mLinearLayoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         mBinding.recSubSectors.adapter = mAdapter
         mBinding.recSubSectors.layoutManager = mLinearLayoutManager
-        mViewModel.dataCountry.set(args.countryItem)
+        mViewModel.observeCountryCode.set(args.countryCode)
+        mViewModel.observeCountryName.set(args.countryName)
     }
 
     private fun observe() {
@@ -90,7 +91,7 @@ class FragmentEmission : FragmentBase() {
         pieChart?.setCenterTextColor(resources.getColor(R.color.mWbRevers))
         pieChart?.setHoleColor(resources.getColor(R.color.mWb))
 
-        pieChart?.centerText = mViewModel.dataCountry.get()?.name ?: ""
+        pieChart?.centerText = mViewModel.observeCountryName.get() ?: ""
 
         pieChart?.isDrawHoleEnabled = true
 

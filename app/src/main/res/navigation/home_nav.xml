@@ -33,12 +33,20 @@
         android:id="@+id/fragmentContinents"
         android:name="com.app.climate_trace.views.fragment.FragmentContinents"
         android:label="Continents"
-        tools:layout="@layout/fragment_continents" />
+        tools:layout="@layout/fragment_continents" >
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://com.app.climate_trace/continents" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentSectors"
         android:name="com.app.climate_trace.views.fragment.FragmentSectors"
         android:label="Sectors"
-        tools:layout="@layout/fragment_sectors"/>
+        tools:layout="@layout/fragment_sectors">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://com.app.climate_trace/sectors" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentCountries"
         android:name="com.app.climate_trace.views.fragment.FragmentCountries"
@@ -52,12 +60,20 @@
         android:id="@+id/fragmentSubSectors"
         android:name="com.app.climate_trace.views.fragment.FragmentSubSectors"
         android:label="SubSectors"
-        tools:layout="@layout/fragment_sub_sectors"/>
+        tools:layout="@layout/fragment_sub_sectors">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://com.app.climate_trace/subsectors" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentGases"
         android:name="com.app.climate_trace.views.fragment.FragmentGases"
         android:label="Gases"
-        tools:layout="@layout/fragment_gases"/>
+        tools:layout="@layout/fragment_gases">
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="https://com.app.climate_trace/gases" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentEmission"
         android:name="com.app.climate_trace.views.fragment.FragmentEmission"
@@ -65,8 +81,15 @@
         tools:layout="@layout/fragment_emission">
 
         <argument
-            android:name="countryItem"
-            app:argType="com.app.climate_trace.businesslogic.pojo.countries.PojoCountriesItem" />
+            android:name="countryName"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="countryCode"
+            app:argType="string" />
+
+        <deepLink
+            app:uri="https://com.app.climate_trace/countries/{countryCode}/emission?countryName={countryName}" />
     </fragment>
 
     <fragment
