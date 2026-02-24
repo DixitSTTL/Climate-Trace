@@ -1,5 +1,6 @@
 package com.app.climate_trace.views.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -38,16 +39,16 @@ class ActivityMain : ActivityBase(), NavController.OnDestinationChangedListener,
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         mBinding = DataBindingUtil.setContentView(this@ActivityMain, R.layout.activity_main)
-        /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-             insets
-         }*/
         mViewModel = ViewModelProvider(this@ActivityMain)[ViewModelMain::class.java]
         mBinding.mViewModel = mViewModel
         setToolbar()
         setDrawer()
         setNavigator()
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        navController.handleDeepLink(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
