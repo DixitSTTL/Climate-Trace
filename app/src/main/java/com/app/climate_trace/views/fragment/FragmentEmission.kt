@@ -80,56 +80,55 @@ class FragmentEmission : FragmentBase() {
     private fun setPieChart() {
         val tLRegular = ResourcesCompat.getFont(mApplication, R.font.lato_regular)
 
-        pieChart!!.setUsePercentValues(true)
-        pieChart!!.description.isEnabled = false
-        pieChart!!.setExtraOffsets(5F, 10F, 5F, 80F)
-        pieChart!!.dragDecelerationFrictionCoef = 0.95f
+        pieChart?.setUsePercentValues(true)
+        pieChart?.description?.isEnabled = false
+        pieChart?.setExtraOffsets(5F, 10F, 5F, 80F)
+        pieChart?.dragDecelerationFrictionCoef = 0.95f
 
-        pieChart!!.setCenterTextTypeface(tLRegular)
-        pieChart!!.setCenterTextSize(20f)
-        pieChart!!.setCenterTextColor(resources.getColor(R.color.mWbRevers))
-        pieChart!!.setHoleColor(resources.getColor(R.color.mWb))
+        pieChart?.setCenterTextTypeface(tLRegular)
+        pieChart?.setCenterTextSize(20f)
+        pieChart?.setCenterTextColor(resources.getColor(R.color.mWbRevers))
+        pieChart?.setHoleColor(resources.getColor(R.color.mWb))
 
-        pieChart!!.centerText = mViewModel.dataCountry.get()?.name ?: ""
+        pieChart?.centerText = mViewModel.dataCountry.get()?.name ?: ""
 
-        pieChart!!.isDrawHoleEnabled = true
+        pieChart?.isDrawHoleEnabled = true
 
-        pieChart!!.setTransparentCircleColor(Color.WHITE)
-        pieChart!!.setTransparentCircleAlpha(110)
+        pieChart?.setTransparentCircleColor(Color.WHITE)
+        pieChart?.setTransparentCircleAlpha(110)
 
-        pieChart!!.holeRadius = 58f
-        pieChart!!.transparentCircleRadius = 61f
+        pieChart?.holeRadius = 58f
+        pieChart?.transparentCircleRadius = 61f
 
-        pieChart!!.setDrawCenterText(true)
+        pieChart?.setDrawCenterText(true)
 
-        pieChart!!.rotationAngle = 0.toFloat()
-        // enable rotation of the chart by touch
-        pieChart!!.isRotationEnabled = true
-        pieChart!!.isHighlightPerTapEnabled = true
+        pieChart?.rotationAngle = 0.toFloat()
+        // enabl?rotation of the chart by touch
+        pieChart?.isRotationEnabled = true
+        pieChart?.isHighlightPerTapEnabled = true
 
 
-        pieChart!!.animateY(1400, Easing.EaseInOutQuad)
+        pieChart?.animateY(1400, Easing.EaseInOutQuad)
         // pieChart.spin(2000, 0, 360);
 
-        pieChart!!.spin(2000, 0F, 180F, Easing.EaseInBack)
-        val l = pieChart!!.legend
-        l.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM
-        l.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
-        l.orientation = Legend.LegendOrientation.HORIZONTAL
-        l.form = Legend.LegendForm.CIRCLE
-        l.typeface = tLRegular
-        l.textColor = resources.getColor(R.color.mWbRevers)
-        l.isWordWrapEnabled = true
-        l.setDrawInside(true)
-        l.xEntrySpace = 7f
-        l.yEntrySpace = 0f
-        l.yOffset = 0f
-
+        pieChart?.spin(2000, 0F, 180F, Easing.EaseInBack)
+        val l = pieChart?.legend
+        l?.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM
+        l?.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
+        l?.orientation = Legend.LegendOrientation.HORIZONTAL
+        l?.form = Legend.LegendForm.CIRCLE
+        l?.typeface = tLRegular
+        l?.textColor = resources.getColor(R.color.mWbRevers)
+        l?.isWordWrapEnabled = true
+        l?.setDrawInside(true)
+        l?.xEntrySpace = 7f
+        l?.yEntrySpace = 0f
+        l?.yOffset = 0f
         // entry label styling
-        pieChart!!.setDrawEntryLabels(false)
-        pieChart!!.setEntryLabelColor(Color.BLACK)
-        pieChart!!.setEntryLabelTypeface(tLRegular)
-        pieChart!!.setEntryLabelTextSize(12f)
+        pieChart?.setDrawEntryLabels(false)
+        pieChart?.setEntryLabelColor(Color.BLACK)
+        pieChart?.setEntryLabelTypeface(tLRegular)
+        pieChart?.setEntryLabelTextSize(12f)
         setPieChartData()
     }
 
@@ -161,11 +160,11 @@ class FragmentEmission : FragmentBase() {
         data.setValueTextSize(12f)
         data.setValueTextColor(resources.getColor(R.color.mWb))
         data.setValueTypeface(tLRegular)
-        pieChart!!.setData(data)
+        pieChart?.setData(data)
 
         // undo all highlights
-        pieChart!!.highlightValues(null)
-        pieChart!!.invalidate()
+        pieChart?.highlightValues(null)
+        pieChart?.invalidate()
     }
 
 }
