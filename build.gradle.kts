@@ -2,7 +2,10 @@
 plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
-    alias(libs.plugins.googleDaggerHiltAndroid) apply false
+    alias(libs.plugins.kotlin.ksp) apply false
+    alias(libs.plugins.jetbrains.kotlin.kapt) apply false
+    alias(libs.plugins.google.dagger.hilt) apply false
+    alias(libs.plugins.androidx.navigation.safeargs) apply false
 
 }
 
@@ -11,10 +14,5 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-    }
-    dependencies {
-        classpath (libs.hilt.android.gradle.plugin)
-        classpath (libs.androidx.navigation.safe.args.gradle.plugin)
-
     }
 }

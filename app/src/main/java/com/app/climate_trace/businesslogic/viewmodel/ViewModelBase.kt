@@ -12,13 +12,13 @@ import javax.inject.Inject
 open class ViewModelBase @Inject constructor() : ViewModel() {
 
     @Inject
-    protected lateinit var _apiHelper: ApiHelper
+     lateinit var _apiHelper: ApiHelper
 
     @Inject
-    protected lateinit var mApplication: MyApplication
+     lateinit var mApplication: MyApplication
 
     @Inject
-    protected lateinit var mPreferences: UtilsSharedPreferences
+     lateinit var mPreferences: UtilsSharedPreferences
 
     val isDataLoaded = ObservableBoolean(false)
     val isDarkModeEnable = ObservableBoolean(false)

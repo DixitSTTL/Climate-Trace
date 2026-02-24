@@ -139,7 +139,7 @@ class FragmentEmission : FragmentBase() {
         val entries: ArrayList<PieEntry> = ArrayList()
 
         mViewModel.dataList.value?.forEach { data ->
-            entries.add(PieEntry(data.AssetCount.toFloat(), data.Sector))
+            entries.add(PieEntry(data.Emissions.toFloat(), data.Sector))
         }
         //you can test above by adding random dummy data to the pie chart or passing the data from the backend.
 

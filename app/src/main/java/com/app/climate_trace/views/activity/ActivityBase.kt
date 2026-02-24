@@ -11,13 +11,13 @@ import javax.inject.Inject
 open class ActivityBase : AppCompatActivity() {
 
     @Inject
-    protected lateinit var mApplication: MyApplication
+    lateinit var mApplication: MyApplication
 
     @Inject
-    protected lateinit var mApiHelper: ApiHelper
+    lateinit var mApiHelper: ApiHelper
 
     @Inject
-    protected lateinit var mPreference: UtilsSharedPreferences
+    lateinit var mPreference: UtilsSharedPreferences
 
     open fun getStatusBarHeight(): Int {
         return try {

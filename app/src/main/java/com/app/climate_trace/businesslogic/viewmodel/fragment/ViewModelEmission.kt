@@ -26,7 +26,7 @@ class ViewModelEmission @Inject constructor() : ViewModelBase() {
 
             data?.let {
 
-                _dataList.value = it?.get(dataCountry.get()!!.alpha3)
+                _dataList.value = it.get(dataCountry.get()!!.alpha3)
                 isDataLoaded.set(true)
 
             }

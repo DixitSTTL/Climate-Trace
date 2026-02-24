@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.climate_trace.businesslogic.interfaces.GeneralItemClickListeners
 import com.app.climate_trace.businesslogic.pojo.countries.PojoCountriesItem
 import com.app.climate_trace.databinding.ItemLayoutCountriesBinding
+import java.util.Locale
 
 class AdapterCountries(var generalItemClickListeners: GeneralItemClickListeners) :
     RecyclerView.Adapter<AdapterCountries.MyViewHolder>(), Filterable {
@@ -101,10 +102,10 @@ class AdapterCountries(var generalItemClickListeners: GeneralItemClickListeners)
                 middelList.clear()
                 middelList.addAll(fullList)
             } else {
-                val query = constraint.toString().toLowerCase().trim()
+                val query = constraint.toString().lowercase(Locale.ROOT).trim()
 
                 fullList.forEach {
-                    if (it.name.toLowerCase().startsWith(query)) {
+                    if (it.name.lowercase(Locale.ROOT).startsWith(query)) {
                         middelList.add(it)
                     }
                 }

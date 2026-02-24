@@ -11,15 +11,15 @@ import javax.inject.Inject
 open class FragmentBase : Fragment() {
 
     @Inject
-    protected lateinit var apiHelper: ApiHelper
+    lateinit var apiHelper: ApiHelper
 
     @Inject
-    protected lateinit var mApplication: MyApplication
+    lateinit var mApplication: MyApplication
 
     @Inject
-    protected lateinit var mPreferences: UtilsSharedPreferences
+    lateinit var mPreferences: UtilsSharedPreferences
 
-    protected var mActivityMain: ActivityMain? = null
+    var mActivityMain: ActivityMain? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -8,6 +8,6 @@
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_app_climate_1trace_utils_StaticData_getBaseURL(JNIEnv *env, jobject thiz) {
-    std::string string = "https://api.climatetrace.org/v4/";
+    std::string string = "https://api.climatetrace.org/v6/";
     return env->NewStringUTF(string.c_str());
 }
